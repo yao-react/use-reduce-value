@@ -18,7 +18,7 @@ yarn add @yao-react/use-reduce-value
 export const Demo = () => {
   const [index, setIndex] = useState(0);
   const indexes = useReduceValue(
-    (acc, a) => [...acc, a], // reducer
+    (acc, a) => [...acc, a], // reduce
     [], // initAcc
     index // value
   );
@@ -35,8 +35,8 @@ export const Demo = () => {
 
 | name    | type               | required | description |
 | ------- | ------------------ | -------- | ----------- |
-| reducer | (acc, curr) => acc | true     |             |
-| initAcc     | any                | true     |             |
+| reduce  | (acc, curr) => acc | true     |             |
+| initAcc | any                | true     |             |
 | value   | any                | true     |             |
 | deps    | any[]              | false    |             |
 
