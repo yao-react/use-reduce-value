@@ -19,7 +19,7 @@ export const Demo = () => {
   const [index, setIndex] = useState(0);
   const indexes = useReduceValue(
     (acc, a) => [...acc, a], // reducer
-    [], // acc
+    [], // initAcc
     index // value
   );
   return (
@@ -36,7 +36,7 @@ export const Demo = () => {
 | name    | type               | required | description |
 | ------- | ------------------ | -------- | ----------- |
 | reducer | (acc, curr) => acc | true     |             |
-| acc     | any                | true     |             |
+| initAcc     | any                | true     |             |
 | value   | any                | true     |             |
 | deps    | any[]              | false    |             |
 

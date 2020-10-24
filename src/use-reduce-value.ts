@@ -5,16 +5,16 @@ const initialDeps = [Symbol('InitialDep')];
 
 export function useReduceValue<V, A>(
   reduce: (acc: A, value: V) => A,
-  acc: A,
+  initAcc: A,
   value: V,
   deps?: any[]
 ) {
   const prevValueRef = useRef(value);
-  const prevAccRef = useRef(acc);
+  const prevAccRef = useRef(initAcc);
   const prevDepsRef = useRef<typeof deps>(initialDeps);
 
   const currAcc = !equals(prevDepsRef.current, deps)
-    ? reduce(acc, value)
+    ? reduce(initAcc, value)
     : prevValueRef.current !== value
     ? reduce(prevAccRef.current as A, value)
     : prevAccRef.current;
