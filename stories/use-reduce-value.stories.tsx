@@ -12,7 +12,12 @@ export default meta;
 export const UseReduceValue = () => {
   const [index, setIndex] = useState(0);
   const [dep, setDep] = useState(0);
-  const logs = useReduceValue((acc, a) => [...acc, a], [], index, [dep]);
+  const logs = useReduceValue<number, number[]>(
+    (acc, a) => [...acc, a],
+    [],
+    index,
+    [dep]
+  );
   return (
     <div>
       <button onClick={() => setIndex(x => x + 1)}>inc index</button>
