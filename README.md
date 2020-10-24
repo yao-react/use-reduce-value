@@ -1,4 +1,4 @@
-# @yao-react/use-reduce-change
+# @yao-react/use-reduce-value
 
 React hook to reduce changed values.
 
